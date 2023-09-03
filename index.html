@@ -1,133 +1,1361 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>#000000</title>
-    <link type="image/x-icon" rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAHklEQVQ4T2NkYGD4z0ABYBw1gGE0DBhGw4BhWIQBAE5OEAELnjVHAAAAAElFTkSuQmCC">
+
+    <title>Portal GTR Consultoria</title>
+
     <style>
-        :root {
-            --color: #000000;
-            --color-transparent: #00000022;
-        }
 
-        ::selection {
-            background: var(--color-transparent);
-        }
 
-        html,
-        body {
-            background: var(--color);
-            height: 100%;
-            margin: 0;
-        }
 
-        body {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-        }
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@500&display=swap');
 
-        #color {
-            background: white;
-            color: var(--color);
-            font-size: 2.5rem;
-            font-weight: 300;
-            padding: 2.25rem 3rem;
-            font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif;
-            cursor: text;
-        }
-    </style>
+
+
+/* Reseta css */
+
+* {
+
+  border: 0;
+
+  margin: 0;
+
+  padding: 0;
+
+  box-sizing: border-box;
+
+  font-family: 'League Spartan', sans-serif;
+
+  -webkit-box-sizing: border-box;
+
+  box-sizing: border-box;
+
+  font-family: 'Mulish', sans-serif;
+
+}
+
+
+
+body {
+
+  background: linear-gradient(45deg, #c18e00 0%, #e68a00 100%);
+
+  display: flex;
+
+  flex-direction: column;
+
+  background-size: cover;
+
+  background-position: center;
+
+  background-repeat: no-repeat;
+
+  background-size: cover;
+
+  background-attachment: fixed;
+
+  font-size: 100%;
+
+}
+
+
+
+/* Abre Funções Cards */
+
+.wrapper {
+
+  width: 90%;
+
+  margin: 0 auto;
+
+  max-width: 80rem;
+
+  background-color: rgba(255, 245, 108, 0.103);
+
+  border-radius: 2%;
+
+}
+
+
+
+.cols {
+
+  display: -webkit-box;
+
+  display: -ms-flexbox;
+
+  display: flex;
+
+  -ms-flex-wrap: wrap;
+
+  flex-wrap: wrap;
+
+  -webkit-box-pack: center;
+
+  -ms-flex-pack: center;
+
+  justify-content: center;
+
+}
+
+
+
+.col {
+
+  width: calc(25% - 2rem);
+
+  margin: 1rem;
+
+  cursor: pointer;
+
+}
+
+
+
+.container {
+
+  -webkit-transform-style: preserve-3d;
+
+  transform-style: preserve-3d;
+
+  -webkit-perspective: 1000px;
+
+  perspective: 1000px;
+
+}
+
+
+
+.front,
+
+.back {
+
+  background-size: cover;
+
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.25);
+
+  border-radius: 10px;
+
+  background-position: center;
+
+  -webkit-transition: -webkit-transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+
+  transition: -webkit-transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+
+  -o-transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+
+  transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+
+  transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+
+  -webkit-backface-visibility: hidden;
+
+  backface-visibility: hidden;
+
+  text-align: center;
+
+  min-height: 280px;
+
+  height: auto;
+
+  border-radius: 10px;
+
+  color: #fff;
+
+  font-size: 1.5rem;
+
+}
+
+
+
+.back {
+
+  background: #ffea8d;
+
+  background: -webkit-linear-gradient(45deg, #cedce7 0%, #596a72 100%);
+
+  background: -o-linear-gradient(45deg, #ffd86e 0%, #bf7200 100%);
+
+  background: linear-gradient(45deg, #ffc72c 0%, #e68a00 100%);
+
+}
+
+
+
+.front:after{
+
+	position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    z-index: 1;
+
+    width: 100%;
+
+    height: 100%;
+
+    content: '';
+
+    display: block;
+
+    opacity: .6;
+
+    background-color: #000;
+
+    -webkit-backface-visibility: hidden;
+
+            backface-visibility: hidden;
+
+    border-radius: 10px;
+
+}
+
+.container:hover .front,
+
+.container:hover .back{
+
+    -webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+
+    transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+
+    -o-transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+
+    transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+
+    transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+
+}
+
+
+
+.back{
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+}
+
+
+
+.inner{
+
+    -webkit-transform: translateY(-50%) translateZ(60px) scale(0.94);
+
+            transform: translateY(-50%) translateZ(60px) scale(0.94);
+
+    top: 50%;
+
+    position: absolute;
+
+    left: 0;
+
+    width: 100%;
+
+    padding: 2rem;
+
+    -webkit-box-sizing: border-box;
+
+            box-sizing: border-box;
+
+    outline: 1px solid transparent;
+
+    -webkit-perspective: inherit;
+
+            perspective: inherit;
+
+    z-index: 2;
+
+    font-size: 100%;
+
+}
+
+
+
+.container .back{
+
+    -webkit-transform: rotateY(180deg);
+
+            transform: rotateY(180deg);
+
+    -webkit-transform-style: preserve-3d;
+
+            transform-style: preserve-3d;
+
+}
+
+
+
+.container .front{
+
+    -webkit-transform: rotateY(0deg);
+
+            transform: rotateY(0deg);
+
+    -webkit-transform-style: preserve-3d;
+
+            transform-style: preserve-3d;
+
+}
+
+
+
+.container:hover .back{
+
+  -webkit-transform: rotateY(0deg);
+
+          transform: rotateY(0deg);
+
+  -webkit-transform-style: preserve-3d;
+
+          transform-style: preserve-3d;
+
+}
+
+
+
+.container:hover .front{
+
+  -webkit-transform: rotateY(-180deg);
+
+          transform: rotateY(-180deg);
+
+  -webkit-transform-style: preserve-3d;
+
+          transform-style: preserve-3d;
+
+}
+
+
+
+.front .inner p{
+
+    margin-bottom: 2rem;
+
+    position: relative;
+
+    text-shadow: 0px 4px 2px rgb(0, 0, 0);
+
+  
+
+}
+
+
+
+.front .inner p:after{
+
+  content: '';
+
+  width: 4rem;
+
+  height: 2px;
+
+  position: absolute;
+
+  background: linear-gradient(45deg,  #f6e6bc 0%,#f79503 100%);
+
+  display: block;
+
+  left: 0;
+
+  right: 0;
+
+  margin: 0 auto;
+
+  bottom: -.75rem;
+
+}
+
+
+
+.front .inner span{
+
+  color: rgba(255, 255, 255, 0.7);
+
+  font-weight: 300;
+
+}
+
+
+
+@media screen and (max-width: 64rem){
+
+  .col{
+
+    width: calc(33.333333% - 2rem);
+
+  }
+
+}
+
+
+
+@media screen and (max-width: 48rem){
+
+  .col{
+
+    width: calc(50% - 2rem);
+
+  }
+
+}
+
+
+
+@media screen and (max-width: 32rem){
+
+  .col{
+
+    width: 100%;
+
+    margin: 0 0 2rem 0;
+
+  }
+
+}
+
+/*Fecha Funções Cards*/
+
+
+
+
+
+
+
+.logo-imagem {
+
+    display: flex;
+
+    justify-content: center;
+
+    margin-top: 2%;            
+
+    margin-bottom: 2%;
+
+    width: 100%;
+
+    }
+
+
+
+        
+
+.logo {
+
+    width: 45%;
+
+    }
+
+
+
+.link-logo {
+
+    display: flex;
+
+    justify-content: center;
+
+    }
+
+
+
+.darken-img {
+
+    opacity: 0.7;
+
+    transition: opacity 0.3s ease;
+
+    }
+
+
+
+.titulo {
+
+    text-align: center;
+
+    color: white;
+
+    margin-bottom: 1%;
+
+}
+
+
+
+.titulo2 {
+
+    text-align: center;
+
+    color: white;
+
+    margin-bottom: 2%;
+
+    font-size: 18px;
+
+}
+
+
+
+button {
+
+    position: relative;
+
+    display: inline-block;
+
+    cursor: pointer;
+
+    outline: none;
+
+    border: 0;
+
+    vertical-align: middle;
+
+    text-decoration: none;
+
+    background: transparent;
+
+    padding: 0;
+
+    font-size: inherit;
+
+    font-family: inherit;
+
+    }
+
+
+
+.learn-more {
+
+    width: 12rem;
+
+    height: auto;
+
+    }
+
+
+
+.circle {
+
+    transition: all 0.45s cubic-bezier(0.65,0,.076,1);
+
+    position: relative;
+
+    display: block;
+
+    margin: 0;
+
+    width: 3rem;
+
+    height: 3rem;
+
+    background: rgb(0, 0, 0); 
+
+    border-radius: 1.625rem;
+
+    }
+
+
+
+.icon {
+
+    transition: all 0.45s cubic-bezier(0.65,0,.076,1);
+
+    position: absolute;
+
+    top: 0;
+
+    bottom: 0;
+
+    margin: auto;
+
+    background: white; 
+
+    }
+
+
+
+.arrow {
+
+    transition: all 0.45s cubic-bezier(0.65,0,.076,1);
+
+    left: 0.625rem;
+
+    width: 1.125rem;
+
+    height: 0.125rem;
+
+    background: none;
+
+    }
+
+
+
+.arrow::before {
+
+    position: absolute;
+
+    content: '';
+
+    top: -0.25rem;
+
+    right: 0.0625rem;
+
+    width: 0.625rem;
+
+    height: 0.625rem;
+
+    border-top: 0.125rem solid #ffffff;
+
+    border-right: 0.125rem solid #fff;
+
+    transform: rotate(45deg);
+
+    }
+
+
+
+.button-text {
+
+    transition: all 0.45s cubic-bezier(0.65,0,.076,1);
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    right: 0;
+
+    bottom: 0;
+
+    padding: 0.75rem 0;
+
+    margin: 0 0 0 1.85rem;
+
+    color: rgb(255, 255, 255); 
+
+    font-weight: 700;
+
+    line-height: 1.6;
+
+    text-align: center;
+
+    text-transform: uppercase;
+
+    }
+
+
+
+.learn-more:hover .circle {
+
+    width: 100%;
+
+    }
+
+
+
+.learn-more:hover .arrow {
+
+    background: #ffffff; 
+
+    transform: translate(1rem, 0);
+
+    }
+
+
+
+.learn-more:hover .button-text {
+
+    color: white; 
+
+}
+
+
+
+#container1 {
+
+    display: flex;
+
+    grid-area: main;
+
+    align-self: center;
+
+    justify-content: center;
+
+    margin-bottom: 2%;
+
+  }
+
+
+
+.rodape {
+
+    margin-top: 2%;
+
+    margin-bottom: 2%;
+
+    }
+
+
+
+.contato {
+
+    text-align: center;
+
+    color: white;
+
+    margin-bottom: 10px;
+
+    }
+
+
+
+.link-portal {
+
+    text-decoration: none; 
+
+    color: inherit;
+
+    
+
+    }
+
+
+
+.gradient-overlay {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    z-index: 1; 
+
+    }
+
+
+
+ 
+
+.container-social {
+
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+
+.btn {
+
+    border: 1px solid rgb(255, 255, 255);
+
+    height: 5em;
+
+    width: 5em;
+
+    margin: 1em;
+
+    display: grid;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    transition: all 0.3s ease-out;
+
+}
+
+
+
+.fab {
+
+    color: white;
+
+    transition: all 0.3s ease-out;
+
+}
+
+
+
+.btn-facebook:hover {
+
+    border: 1px solid rgb(0, 0, 0);
+
+    cursor: pointer;
+
+    box-shadow: 0px 0px 17px 12px rgba(240, 148, 51, 0.39);
+
+    -webkit-box-shadow: 0px 0px 17px 12px rgba(220, 39, 67, 0.2);
+
+    -moz-box-shadow: 0px 0px 17px 12px rgba(240, 148, 51, 0.39);
+
+    background: -moz-linear-gradient(
+
+        45deg,
+
+        rgb(17, 0, 255) 0%,
+
+        #2600ff 25%,
+
+        rgb(3, 15, 179) 50%,
+
+        #4000b8 75%,
+
+        #4000b8 100%
+
+    );
+
+    background: -webkit-linear-gradient(
+
+        rgb(17, 0, 255) 0%,
+
+        #2600ff 25%,
+
+        rgb(3, 15, 179) 50%,
+
+        #4000b8 75%,
+
+        #4000b8 100%
+
+    );
+
+    background: linear-gradient(
+
+        45deg,
+
+        rgb(17, 0, 255) 0%,
+
+        #2600ff 25%,
+
+        rgb(3, 15, 179) 50%,
+
+        #4000b8 75%,
+
+        #4000b8 100%
+
+    );
+
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+
+}
+
+
+
+.btn-linkedin:hover {
+
+    border: 1px solid rgb(0, 0, 0);
+
+    background: #0072b1;
+
+    cursor: pointer;
+
+    box-shadow: 0px 0px 17px 12px rgba(29, 161, 242, 0.39);
+
+    -webkit-box-shadow: 0px 0px 17px 12px rgba(29, 161, 242, 0.2);
+
+    -moz-box-shadow: 0px 0px 17px 12px rgba(29, 161, 242, 0.39);
+
+}
+
+
+
+
+
+
+
+.btn-youtube:hover {
+
+    border: 1px solid rgb(0, 0, 0);
+
+    cursor: pointer;
+
+    box-shadow: 0px 0px 17px 12px rgba(240, 148, 51, 0.39);
+
+    -webkit-box-shadow: 0px 0px 17px 12px rgba(220, 39, 67, 0.2);
+
+    -moz-box-shadow: 0px 0px 17px 12px rgba(240, 148, 51, 0.39);
+
+    background: -moz-linear-gradient(
+
+        45deg,
+
+        rgb(255, 0, 0) 0%,
+
+        #ff0000 25%,
+
+        rgb(255, 0, 0) 50%,
+
+        #cf0000 75%,
+
+        #cf0000 100%
+
+    );
+
+    background: -webkit-linear-gradient(
+
+        rgb(255, 0, 0) 0%,
+
+        #ff0000 25%,
+
+        rgb(255, 0, 0) 50%,
+
+        #cf0000 75%,
+
+        #cf0000 100%
+
+    );
+
+    background: linear-gradient(
+
+        45deg,
+
+        rgb(255, 0, 0) 0%,
+
+        #ff0000 25%,
+
+        rgb(255, 0, 0) 50%,
+
+        #cf0000 75%,
+
+        #cf0000 100%
+
+    );
+
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+
+}
+
+
+
+
+
+.btn-instagram:hover {
+
+    border: 1px solid rgb(0, 0, 0);
+
+    cursor: pointer;
+
+    box-shadow: 0px 0px 17px 12px rgba(240, 148, 51, 0.39);
+
+    -webkit-box-shadow: 0px 0px 17px 12px rgba(220, 39, 67, 0.2);
+
+    -moz-box-shadow: 0px 0px 17px 12px rgba(240, 148, 51, 0.39);
+
+    background: -moz-linear-gradient(
+
+        45deg,
+
+        rgb(240, 148, 51) 0%,
+
+        #e6683c 25%,
+
+        rgb(220, 39, 67) 50%,
+
+        #cc2366 75%,
+
+        #bc1888 100%
+
+    );
+
+    background: -webkit-linear-gradient(
+
+        45deg,
+
+        #f09433 0%,
+
+        #e6683c 25%,
+
+        #dc2743 50%,
+
+        #cc2366 75%,
+
+        #bc1888 100%
+
+    );
+
+    background: linear-gradient(
+
+        45deg,
+
+        #f09433 0%,
+
+        #e6683c 25%,
+
+        #dc2743 50%,
+
+        #cc2366 75%,
+
+        #bc1888 100%
+
+    );
+
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+
+}
+
+
+
+.link-borda {
+
+    text-shadow: 0px 4px 10px rgb(0, 0, 0);
+
+}
+
+
+
+.texto-inner {
+
+    font-size: 200%;
+
+}
+
+
+
+</style>
+
 </head>
 
+
+
 <body>
-    <p id="color">#000000</p>
+
+    <header>
+
+        <div class="logo-imagem">
+
+        <a class="link-logo" href="https://www.gtrconsultoria.com.br/">
+
+            <img class="logo" src="https://uploads-ssl.webflow.com/5cdb0a44fe020cfb6ddb6523/6182ce8aa4f8ae0c8af9441e_logo-branco.png" alt="Logo GTR" onmouseover="darkenImage(this)" onmouseout="normalizeImage(this)">
+
+        </a>
+
+    </div>
+
+    </header>
+
+
+
+    <main class="conteudo">      
+
+        <section>
+
+            <h1 class="titulo">Portal GTR Consultoria</h1>
+
+            <h2 class="titulo2">Dúvidas? Acesse nosso portal e abra um chamado.</h2>
+
+            <div id="container1">
+
+                <button class="learn-more">
+
+                    <span class="circle" aria-hidden="true">
+
+                        <span class="icon arrow"></span>
+
+                    </span>
+
+                    <span class="button-text"><a class="link-portal" href="https://gtrconsultoria.atlassian.net/servicedesk/customer/portal/1/group/-1">Clique Aqui</a></span>
+
+                </button>
+
+            </div>
+
+        </section>
+
+        <div class="wrapper">
+
+            <div class="cols">
+
+                <div class="col" ontouchstart="this.classList.toggle('hover');">
+
+                    <div class="container">
+
+                        <div class="front" style="background-image: url(https://images.pexels.com/photos/73833/weld-hot-soldering-radio-welder-73833.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)">
+
+                            <div class="inner">
+
+                                <p>Cadastro</p>
+
+                                <span>Manuais</span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="back">
+
+                            <div class="inner">
+
+                                <a class="link-portal" href="https://gtrconsultoria.atlassian.net/servicedesk/customer/portal/1/topic/f960675e-faf5-4df9-9072-abce29921f3b"><p class="link-borda">Clique aqui para acessar os manuais do módulo Cadastro.</p></a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col" ontouchstart="this.classList.toggle('hover');">
+
+                    <div class="container">
+
+                        <div class="front" style="background-image: url(https://images.pexels.com/photos/2760241/pexels-photo-2760241.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)">
+
+                            <div class="inner">
+
+                                <p>ApontadorTouch</p>
+
+                                <span>Manuais</span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="back">
+
+                            <div class="inner">
+
+                                <a class="link-portal" href="https://gtrconsultoria.atlassian.net/servicedesk/customer/portal/1/topic/27c325af-4b3c-4aae-9781-e4d845cdf2e4"><p class="link-borda">Clique aqui para acessar os manuais do módulo ApontadorTouch.</p></a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col" ontouchstart="this.classList.toggle('hover');">
+
+                    <div class="container">
+
+                        <div class="front" style="background-image: url(https://images.pexels.com/photos/3855962/pexels-photo-3855962.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)">
+
+                            <div class="inner">
+
+                                <p>FilaOrdem</p>
+
+                                <span>Manuais</span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="back">
+
+                            <div class="inner">
+
+                                <a class="link-portal" href="https://gtrconsultoria.atlassian.net/servicedesk/customer/portal/1/topic/3ebceddd-19f3-42cd-ab21-bbd221b4988c"><p class="link-borda">Clique aqui para acessar os manuais do módulo FilaOrdem.</p></a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col" ontouchstart="this.classList.toggle('hover');">
+
+                    <div class="container">
+
+                        <div class="front" style="background-image: url(https://images.pexels.com/photos/3421636/pexels-photo-3421636.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)">
+
+                            <div class="inner">
+
+                                <p>Acompanhamento</p>
+
+                                <span>Manuais</span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="back">
+
+                            <div class="inner">
+
+                                <a class="link-portal" href="https://gtrconsultoria.atlassian.net/servicedesk/customer/portal/1/topic/0df34a41-8877-471b-86f8-954023904abe"><p class="link-borda">Clique aqui para acessar os manuais do módulo Acompanhamento.</p></a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col" ontouchstart="this.classList.toggle('hover');">
+
+                  <div class="container">
+
+                      <div class="front" style="background-image: url(https://images.pexels.com/photos/1474993/pexels-photo-1474993.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)">
+
+                          <div class="inner">
+
+                              <p>ApontadorAPP</p>
+
+                              <span>Manuais</span>
+
+                          </div>
+
+                      </div>
+
+                      <div class="back">
+
+                          <div class="inner">
+
+                              <a class="link-portal" href="https://gtrconsultoria.atlassian.net/servicedesk/customer/portal/1/topic/44f66e0e-35f5-4fdf-8fca-aef60ffa0a41"><p class="link-borda">Clique aqui para acessar os manuais do módulo ApontadorAPP.</p></a>
+
+                          </div>
+
+                      </div>
+
+                  </div>
+
+              </div>
+
+              <div class="col" ontouchstart="this.classList.toggle('hover');">
+
+                <div class="container">
+
+                    <div class="front" style="background-image: url(https://images.pexels.com/photos/3780477/pexels-photo-3780477.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)">
+
+                        <div class="inner">
+
+                            <p>Artigos & Instruções</p>
+
+                            <span>Manuais</span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="back">
+
+                        <div class="inner">
+
+                            <a class="link-portal" href="https://gtrconsultoria.atlassian.net/servicedesk/customer/portal/1/topic/89494a55-a9ce-407c-9538-a5586820df95"><p class="link-borda">Clique aqui para acessar Artigos & Instruções.</p></a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            </div> 
+
+        </div>
+
+    </main>
+
+
+
+    <footer class="rodape">
+
+        <div class="contato">
+
+            <p class="contato"><strong>Contato</strong></p>
+
+            <p class="contato"><strong>Telefone:</strong> 11 3467-0230<br>
+
+        </div>
+
+        
+
+        <div class="container-social">
+
+            <div class="btn btn-facebook">
+
+                <a href="https://www.facebook.com/gtrconsultoria?mibextid=LQQJ4d"><i class="fab fa-facebook fa-3x"></i></a>
+
+            </div>
+
+            <div class="btn btn-linkedin">
+
+                <a href="https://br.linkedin.com/company/gtr-consultoria"><i class="fab fa-linkedin fa-3x"></i></a>
+
+            </div>
+
+            <div class="btn btn-instagram">
+
+                <a href="https://www.instagram.com/gtrconsultoria/"><i class="fab fa-instagram fa-3x"></i></a>
+
+            </div>
+
+            <div class="btn btn-youtube">
+
+                <a href="https://www.youtube.com/@gtrolhovivo"><i class="fab fa-youtube fa-3x"></i></a>
+
+            </div>
+
+        </div>
+
+        
+
+    </footer>
+
+
+
     <script>
-        function randomInt(min, max) {
-            return Math.floor(Math.random() * (max - min + 1) + min);
+
+        // Função para escurecer a imagem
+
+        function darkenImage(image) {
+
+            image.classList.add("darken-img");
+
         }
 
-        function hslToHex(h, s, l) {
-            h /= 360;
-            s /= 100;
-            l /= 100;
-            var r = void 0,
-                g = void 0,
-                b = void 0;
-            if (s === 0) {
-                r = g = b = l; // achromatic
-            } else {
-                var hue2rgb = function hue2rgb(p, q, t) {
-                    if (t < 0) t += 1;
-                    if (t > 1) t -= 1;
-                    if (t < 1 / 6) return p + (q - p) * 6 * t;
-                    if (t < 1 / 2) return q;
-                    if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6;
-                    return p;
-                };
-                var q = l < 0.5 ? l * (1 + s) : l + s - l * s;
-                var p = 2 * l - q;
-                r = hue2rgb(p, q, h + 1 / 3);
-                g = hue2rgb(p, q, h);
-                b = hue2rgb(p, q, h - 1 / 3);
-            }
-            var toHex = function toHex(x) {
-                var hex = Math.round(x * 255).toString(16);
-                return hex.length === 1 ? '0' + hex : hex;
-            };
-            return '#' + toHex(r) + toHex(g) + toHex(b);
+
+
+        // Função para retornar a imagem ao estado normal
+
+        function normalizeImage(image) {
+
+            image.classList.remove("darken-img");
+
         }
 
-        window.onload = function () {
-            let stopProp = function (ev) {
-                ev.stopPropagation();
-            }
 
-            var colorElement = document.getElementById("color");
-            colorElement.addEventListener("click", stopProp, false);
-            colorElement.addEventListener("mousedown", stopProp, false);
 
-            var setFavicon = function (hex) {
-                var canvas = document.createElement('canvas');
-                canvas.width = 16;
-                canvas.height = 16;
-                var ctx = canvas.getContext('2d');
-                ctx.fillStyle = hex;
-                ctx.fillRect(0, 0, 16, 16);
-                document.getElementsByTagName('link')[0].href = canvas.toDataURL("image/x-icon");
-            }
+        // Inserindo o script do Font Awesome
 
-            var setRandomColor = function setRandomColor() {
-                var h = void 0,
-                    s = void 0,
-                    l = void 0;
+        var fontAwesomeScript = document.createElement('script');
 
-                h = randomInt(0, 359);
-                s = randomInt(55, 75);
-                l = randomInt(40, 60);
+        fontAwesomeScript.src = 'https://kit.fontawesome.com/2b1d000091.js';
 
-                document.documentElement.style.setProperty('--color', 'hsl(' + h + ', ' + s + '%, ' + l + '%)');
-                var hex = hslToHex(h, s, l);
-                document.title = hex;
-                colorElement.innerHTML = hex;
-                document.documentElement.style.setProperty('--color-transparent', hex + '22');
+        fontAwesomeScript.crossOrigin = 'anonymous';
 
-                setFavicon(hex);
-            };
-            setRandomColor();
+        document.head.appendChild(fontAwesomeScript);
 
-            var body = document.getElementsByTagName("body")[0];
-            body.addEventListener("mousedown", function (ev) {
-                ev.preventDefault();
-            });
-            body.addEventListener("click", function () {
-                setRandomColor();
-            }, false);
-        };
     </script>
+
 </body>
 
 </html>
